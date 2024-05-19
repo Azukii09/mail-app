@@ -1,7 +1,7 @@
 export default function Button(props: {
     typeName: "submit" | "reset" | "button" | undefined;
     className: string | undefined;
-    name: string | undefined;
+    name?: string | undefined;
     handler?: any;
 }){
     return (
