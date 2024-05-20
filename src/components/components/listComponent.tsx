@@ -1,11 +1,19 @@
 import ListItem from "@/components/tokens/listItem";
 
-export default function ListComponent(props: { list: any[]; }) {
+export default function ListComponent(props: {
+    itemClass?: string | undefined;
+    ulClass?: string | undefined;
+    list: any[]; }) {
        return(
         <>
-            <ul>
+            <ul className={props.ulClass}>
                 {props.list.map(item => (
-                    <ListItem key={item.id} itemName={item.name} />
+                    <ListItem
+                        itemClass={props.itemClass}
+                        key={item.id}
+                        itemName={item.name}
+                        linkTo={item.linkTo}
+                    />
                 ))}
             </ul>
         </>
