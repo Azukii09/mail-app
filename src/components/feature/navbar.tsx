@@ -1,6 +1,8 @@
 "use client"
 import Hamburger from "@/components/tokens/hamburger";
 import {useState} from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar(){
     const [state, setState] = useState(false);
@@ -10,14 +12,24 @@ export default function Navbar(){
         setHamburger("hamburger-active");
         setState(!state);
     }
+    const logo = "/assets/img/keaLogo.png";
 
     return(
-        <nav className="py-5 px-4 bg-warning flex items-center justify-between">
-            <div className="flex items-center justify-between relative">
+        <nav className="py-5 px-4 bg-slate-600 flex items-center justify-between">
+            <div className="flex items-center justify-between relative p-2">
                 <Hamburger
                     handler={HandleHamburger}
                     action={state ? hamburger + " block absolute lg:hidden":"block absolute lg:hidden"}
                 />
+                <Link href={"/dashboard"} className="lg:flex hidden items-center justify-between">
+                    <Image
+                        src={logo}
+                        alt={"..."}
+                        width={100}
+                        height={0}
+                    />
+                </Link>
+
             </div>
             <div>2</div>
         </nav>

@@ -31,7 +31,7 @@ export default function Sidebar(){
         },
     ]
     return (
-        <aside className={"w-64 bg-primary overflow-y-auto"}>
+        <aside className={"w-64 bg-slate-600 overflow-y-auto"}>
             <ListComponent
                 ulClass={"mt-6"}
                 itemClass={"relative px-6 py-3 text-white font-bold"}
