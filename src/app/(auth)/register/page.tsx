@@ -1,4 +1,6 @@
 import Image from "next/image";
+import InputForm from "@/components/components/inputForm";
+import Link from "next/dist/client/link";
 
 export default function Register(){
 
@@ -25,33 +27,13 @@ export default function Register(){
                                 >
                                     Create Account
                                 </h1>
-                                <label className="block text-sm">
-                                    <span className="text-gray-700 ">Email</span>
-                                    <input
-                                        className="block w-full mt-1 text-sm form-input"
-                                        placeholder="Jane Doe"
-                                    />
-                                </label>
-                                <label className="block mt-4 text-sm">
-                                    <span className="text-gray-700 ">Password</span>
-                                    <input
-                                        className="block w-full mt-1 text-sm form-input"
-                                        placeholder="***************"
-                                        type="password"
-                                    />
-                                </label>
-                                <label className="block mt-4 text-sm">
-                                    <span className="text-gray-700 ">Confirm Password</span>
-                                    <input
-                                        className="block w-full mt-1 text-sm form-input"
-                                        placeholder="***************"
-                                        type="password"
-                                    />
-                                </label>
+                                <InputForm labelName={"Email"} type={"text"} placeholder={"example@example.com"}/>
+                                <InputForm labelName={"Password"} type={"password"} placeholder={"Password"}/>
+                                <InputForm labelName={"Confirm Password"} type={"password"} placeholder={"Confirm Password"}/>
 
                                 {/*// <!-- You should use a button here, as the anchor is only used for the example  -->*/}
                                 <a
-                                    className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+                                    className="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-primary border border-transparent rounded-lg active:bg-primary hover:bg-secondary hover:text-contras focus:outline-none focus:shadow-outline-purple"
                                     href="#"
                                 >
                                     Register
@@ -91,12 +73,12 @@ export default function Register(){
                                 </button>
 
                                 <p className="mt-1">
-                                    <a
-                                        className="text-sm font-medium text-purple-600  hover:underline"
-                                        href="#"
+                                    <Link
+                                        className={"text-sm font-medium text-secondary  hover:underline"}
+                                        href={"/login"}
                                     >
                                         Already have account?
-                                    </a>
+                                    </Link>
                                 </p>
                             </div>
                         </div>
