@@ -16,7 +16,7 @@ export default function Navbar(){
 
     return(
         <nav className="py-5 px-4 bg-slate-600 flex items-center justify-between">
-            <div className="flex items-center justify-between relative p-2">
+            <div className="flex items-center justify-between relative">
                 <Hamburger
                     handler={HandleHamburger}
                     action={state ? hamburger + " block absolute lg:hidden":"block absolute lg:hidden"}
@@ -26,7 +26,7 @@ export default function Navbar(){
                         src={logo}
                         alt={"..."}
                         width={100}
-                        height={0}
+                        height={100}
                     />
                 </Link>
 
