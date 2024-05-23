@@ -3,11 +3,12 @@ import Hamburger from "@/components/tokens/hamburger";
 import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/components/tokens/button";
+import {signIn} from "next-auth/react";
 
 export default function Navbar(){
     const [state, setState] = useState(false);
     const [hamburger, setHamburger] = useState("");
-
     const HandleHamburger = () => {
         setHamburger("hamburger-active");
         setState(!state);
@@ -31,7 +32,9 @@ export default function Navbar(){
                 </Link>
 
             </div>
-            <div>2</div>
+            <div>
+                <Button typeName={"button"} className={"btn btn-info"} name={"Login"} handler={() => signIn()} />
+            </div>
         </nav>
     )
 }

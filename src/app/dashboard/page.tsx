@@ -3,13 +3,21 @@ import Button from "@/components/tokens/button";
 import {useRouter} from "next/navigation";
 import ListComponent from "@/components/components/listComponent";
 import InputItem from "@/components/tokens/inputItem";
+import {useSession} from "next-auth/react";
+import {useEffect} from "react";
 
 export default function Dashboard(){
     const router = useRouter()
+    const {data: session,status} = useSession()
+    useEffect(() => {
+        if (status === "unauthenticated") {
+            router.push("/login")
+        }
+    }, [status,router]);
     function goToDashboard(){
         router.push("/")
     }
-    const data = [
+    const dataItem = [
         {
             id:1,
             name:"item 1",
@@ -42,7 +50,7 @@ export default function Dashboard(){
                 <Button className={"btn btn-danger"} typeName={"button"} name={"Danger"}/>
             </div>
             <div className="container mt-7 border-2">
-                <ListComponent list={data}/>
+                <ListComponent list={dataItem}/>
             </div>
             <div className="container mt-7 ">
                 <InputItem type={"text"} placeholder={"check"}/>
