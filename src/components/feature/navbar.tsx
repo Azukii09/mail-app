@@ -33,7 +33,7 @@ export default function Navbar(){
 
             </div>
             <div>
-                <Button typeName={"button"} className={"btn btn-info"} name={"Login"} handler={() => signIn()} />
+                <Button typeName={"button"} className={"btn btn-info"} name={"Login"} handler={() => signIn("credentials")} />
             </div>
         </nav>
     )
